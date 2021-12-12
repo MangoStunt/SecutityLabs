@@ -1,0 +1,22 @@
+{
+  "name": "lab1_security",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "grunt-contrib-jshint": "~0.10.0",
+    "grunt-contrib-nodeunit": "~0.4.1",
+    "grunt-contrib-uglify": "~0.5.0",
+    "webpack": "^5.38.1",
+    "webpack-cli": "^4.7.2"
+  },
+  "devDependencies": {
+    "grunt": "^1.4.1"
+  }
+}

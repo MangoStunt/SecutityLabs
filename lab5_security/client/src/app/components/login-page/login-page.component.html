@@ -1,0 +1,26 @@
+<form class="card" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+  <div class="card-content">
+    <span class="card-title">Sign into the system</span>
+    <div class="input-field">
+      <input formControlName="email" id="email" type="email" [ngClass]="{'invalid': loginForm.get('email')!.invalid && loginForm.get('email')!.touched}">
+      <label for="email">Email:</label>
+      <span *ngIf="loginForm.get('email')!.invalid && loginForm.get('email')!.touched"
+            class="helper-text red-text">
+        <span *ngIf="loginForm.get('email')!.errors!['required']">*This field is required</span>
+        <span *ngIf="loginForm.get('email')!.errors!['email']">*This email is not valid</span>
+      </span>
+    </div>
+    <div class="input-field">
+      <input formControlName="password" id="password" type="password" [ngClass]="{'invalid': loginForm.get('password')!.invalid && loginForm.get('password')!.touched}">
+      <label for="password">Password:</label>
+      <span *ngIf="loginForm.get('password')!.invalid && loginForm.get('password')!.touched"
+            class="helper-text red-text">
+        <span *ngIf="loginForm.get('password')!.errors!['required']">* This field is required *</span>
+        <span *ngIf="loginForm.get('password')!.errors!['minlength'] && loginForm.get('password')!.errors!['minlength']!['requiredLength']">* The password isn't valid *</span>
+      </span>
+    </div>
+  </div>
+  <div class="card-action">
+    <button type="submit" class="modal-action btn waves-effect" [disabled]="loginForm.invalid">Sign In</button>
+  </div>
+</form>
